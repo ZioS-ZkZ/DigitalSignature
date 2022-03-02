@@ -1,0 +1,16 @@
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.exe
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.deps.json
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.runtimeconfig.json
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.runtimeconfig.dev.json
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.dll
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.pdb
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.AssemblyReference.cache
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.fMain.resources
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.GenerateResource.cache
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.AssemblyInfoInputs.cache
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.AssemblyInfo.cs
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.CoreCompileInputs.cache
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.dll
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.pdb
+D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.genruntimeconfig.cache

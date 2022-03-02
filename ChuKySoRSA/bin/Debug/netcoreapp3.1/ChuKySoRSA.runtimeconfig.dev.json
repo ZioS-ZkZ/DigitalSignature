@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\theha\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\theha\\.nuget\\packages",
+      "D:\\1lerningapplication\\VisualStudio\\share\\NuGetPackages"
+    ]
+  }
+}
