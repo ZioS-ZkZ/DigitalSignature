@@ -68,7 +68,6 @@ namespace ChuKySoRSA
             //chuyển các ô về trạng thái trống 
             SNTp.Text = SNTq.Text = Phi_n.Text = SoModule_n.Text = SoMu_e.Text = So_d.Text = string.Empty;
         }
-        string nowActiviti = "none"; // chua lam gi 
         
 
         // code tạo khóa 
@@ -211,7 +210,6 @@ namespace ChuKySoRSA
             SoModule_n.Text = soN.ToString();
             SoMu_e.Text = soE.ToString();
             So_d.Text = soD.ToString();
-            nowActiviti = "da tao khoa"; // cập nhật tình trạng 
             btRandomKey.Enabled = false; // ẩn nút RandomKey đi
         }
         //event mở file muốn ký và chọn thư mục
@@ -233,87 +231,68 @@ namespace ChuKySoRSA
         //event tạo chữ ký
         private void btTaoChuKy_Click(object sender, EventArgs e)
         {
-            //kiểm tra tình trạng
-            if(nowActiviti != "da tao khoa")
+            // kiểm tra tồn tại path không
+            if (!File.Exists(textDuongDanGui.Text))
             {
-                MessageBox.Show("Bạn chưa tạo chữ ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa chọn file thực hiện ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (nowActiviti == "da tao khoa")
+            if (File.Exists(textDuongDanGui.Text))
             {
-                // kiểm tra tồn tại path không
-                if (!File.Exists(textDuongDanGui.Text))
-                {
-                    MessageBox.Show("Bạn chưa chọn file thực hiện ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (File.Exists(textDuongDanGui.Text))
-                {
-                    //mở file ra
-                    FileStream fsFileDauVao = new FileStream(textDuongDanGui.Text, FileMode.Open);
-                    //Dùng hàm băm SHA256 
-                    SHA256 mySHA256 = SHA256Managed.Create();
-                    byte[] FileVBKy_temp1 = mySHA256.ComputeHash(fsFileDauVao);
-                    string FileVBKy = Convert.ToBase64String(FileVBKy_temp1);
-                    textHienThiHashGui.Text = FileVBKy.ToString(); // hiện ra màn hình
-                    string VBKemChuKy = maHoaRSA(FileVBKy); // mã hóa file
-                    textTepKyGui.Text = VBKemChuKy; // hiện ra màn hình
-                    fsFileDauVao.Close();
-                    fsFileDauVao.Dispose();
-                    nowActiviti = "da ky";//update tình trạng
-                    MessageBox.Show("Thực hiện ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btTaoChuKy.Enabled = false;// ẩn nút Tạo chữ ký 
-                }
+                //mở file ra
+                FileStream fsFileDauVao = new FileStream(textDuongDanGui.Text, FileMode.Open);
+                //Dùng hàm băm SHA256 
+                SHA256 mySHA256 = SHA256Managed.Create();
+                byte[] FileVBKy_temp1 = mySHA256.ComputeHash(fsFileDauVao);
+                string FileVBKy = Convert.ToBase64String(FileVBKy_temp1);
+                textHienThiHashGui.Text = FileVBKy.ToString(); // hiện ra màn hình
+                string VBKemChuKy = maHoaRSA(FileVBKy); // mã hóa file
+                textTepKyGui.Text = VBKemChuKy; // hiện ra màn hình
+                fsFileDauVao.Close();
+                fsFileDauVao.Dispose();
+                MessageBox.Show("Thực hiện ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btTaoChuKy.Enabled = false;// ẩn nút Tạo chữ ký 
             }
         }
 
         private void btKiemTra_Click(object sender, EventArgs e)
         {
-            if (nowActiviti == "da ky")
+            if (!File.Exists(textDuongDanNhan.Text))
             {
-                if (!File.Exists(textDuongDanNhan.Text))
-                {
-                    MessageBox.Show("Bạn chưa chọn Tài liệu kiểm tra chữ ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (File.Exists(textDuongDanNhan.Text))
-                {
-                    FileStream fsFileDauVao = new FileStream(textDuongDanNhan.Text, FileMode.Open);
-                    SHA256 mySHA256 = SHA256Managed.Create();
-                    byte[] FileVBKy_temp2 = mySHA256.ComputeHash(fsFileDauVao);
-                    string ChuoiVBdiKem_ShA = Convert.ToBase64String(FileVBKy_temp2);
-                    textHienThiHashNhan.Text = ChuoiVBdiKem_ShA.ToString();
-                    string VBKemChuKyGM = giaiMaRSA(textTepKyGui.Text); // thực hiện giải mã chữ ký
-                    textGiaiMaChuKy.Text = VBKemChuKyGM.ToString();
-                    // kiểm tra xem file giải mã bằng public key có trùng với văn bản đi kèm không
-                    int result = 0;
-                    if (VBKemChuKyGM == ChuoiVBdiKem_ShA)
-                        result = 1;
-                    else
-                        result = 0;
-                    if (result == 1)
-                    {
-                        MessageBox.Show("Tài liệu gửi đến không bị chỉnh sửa gì", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btKiemTra.Enabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        btKiemTra.Enabled = false;
-                    }
-                    fsFileDauVao.Close();
-                    fsFileDauVao.Dispose();
-
-                }
+                MessageBox.Show("Bạn chưa chọn Tài liệu kiểm tra chữ ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            if (File.Exists(textDuongDanNhan.Text))
             {
-                MessageBox.Show("Chưa thực hiện ký và gửi file ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btKiemTra.Enabled = false;
+                FileStream fsFileDauVao = new FileStream(textDuongDanNhan.Text, FileMode.Open);
+                SHA256 mySHA256 = SHA256Managed.Create();
+                byte[] FileVBKy_temp2 = mySHA256.ComputeHash(fsFileDauVao);
+                string ChuoiVBdiKem_ShA = Convert.ToBase64String(FileVBKy_temp2);
+                textHienThiHashNhan.Text = ChuoiVBdiKem_ShA.ToString();
+                string VBKemChuKyGM = giaiMaRSA(textTepKyGui.Text); // thực hiện giải mã chữ ký
+                textGiaiMaChuKy.Text = VBKemChuKyGM.ToString();
+                // kiểm tra xem file giải mã bằng public key có trùng với văn bản đi kèm không
+                int result = 0;
+                if (VBKemChuKyGM == ChuoiVBdiKem_ShA)
+                    result = 1;
+                else
+                    result = 0;
+                if (result == 1)
+                {
+                   MessageBox.Show("Tài liệu gửi đến không bị chỉnh sửa gì", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   btKiemTra.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btKiemTra.Enabled = false;
+                }
+                fsFileDauVao.Close();
+                fsFileDauVao.Dispose();
             }
         }
 
         private void btTaoMoiKey_Click(object sender, EventArgs e)
         {
             textDuongDanGui.Text = textDuongDanNhan.Text = textGiaiMaChuKy.Text = textTepKyGui.Text = textHienThiHashGui.Text = textHienThiHashNhan.Text = string.Empty;
-            nowActiviti = "none";
             reset();
             btRandomKey.Enabled = true;
         }
