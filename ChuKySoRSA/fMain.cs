@@ -121,7 +121,7 @@ namespace ChuKySoRSA
             int[] temp3 = new int[temp2.Length];
             for (int i = 0; i < temp2.Length; i++)
             {
-                temp3[i] = RSA_mod(temp2[i], soE, soN); // bước mã hóa ra c khi có m,e,n
+                temp3[i] = RSA_mod(temp2[i], soD, soN); // bước mã hóa ra c khi có m,e,n
             }
             //Chuyển sang kiểu kí tự trong bảng mã Unicode (dạng chữ )
             string mh_str = "";
@@ -154,7 +154,7 @@ namespace ChuKySoRSA
             int[] temp3 = new int[temp2.Length];
             for (int i = 0; i < temp3.Length; i++)
             {
-                temp3[i] = RSA_mod(temp2[i], soD, soN);// bước giải mã ra m khi có c, d, n 
+                temp3[i] = RSA_mod(temp2[i], soE, soN);// bước giải mã ra m khi có c, d, n 
             }
             //chuyển về unicode (dạng chữ tức là base64 ở bước mã hóa)
             string gm_str = "";
