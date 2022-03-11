@@ -240,9 +240,9 @@ namespace ChuKySoRSA
             {
                 //mở file ra
                 FileStream fsFileDauVao = new FileStream(textDuongDanGui.Text, FileMode.Open);
-                //Dùng hàm băm SHA256 
-                SHA256 mySHA256 = SHA256Managed.Create();
-                byte[] FileVBKy_temp1 = mySHA256.ComputeHash(fsFileDauVao);
+                //Dùng hàm băm SHA512
+                SHA512 mySHA512 = SHA512Managed.Create();
+                byte[] FileVBKy_temp1 = mySHA512.ComputeHash(fsFileDauVao);
                 string FileVBKy = Convert.ToBase64String(FileVBKy_temp1);
                 textHienThiHashGui.Text = FileVBKy.ToString(); // hiện ra màn hình
                 string VBKemChuKy = maHoaRSA(FileVBKy); // mã hóa file
@@ -263,8 +263,8 @@ namespace ChuKySoRSA
             if (File.Exists(textDuongDanNhan.Text))
             {
                 FileStream fsFileDauVao = new FileStream(textDuongDanNhan.Text, FileMode.Open);
-                SHA256 mySHA256 = SHA256Managed.Create();
-                byte[] FileVBKy_temp2 = mySHA256.ComputeHash(fsFileDauVao);
+                SHA512 mySHA512 = SHA512Managed.Create();
+                byte[] FileVBKy_temp2 = mySHA512.ComputeHash(fsFileDauVao);
                 string ChuoiVBdiKem_ShA = Convert.ToBase64String(FileVBKy_temp2);
                 textHienThiHashNhan.Text = ChuoiVBdiKem_ShA.ToString();
                 string VBKemChuKyGM = giaiMaRSA(textTepKyGui.Text); // thực hiện giải mã chữ ký
