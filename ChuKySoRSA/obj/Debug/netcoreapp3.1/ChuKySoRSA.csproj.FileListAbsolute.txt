@@ -29,3 +29,34 @@ D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\
 D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libsodium.dll
 D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.Properties.Resources.resources
 D:\PROJECT\c#\ChuKySoRSA\ChuKySoRSA\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.CopyComplete
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.exe
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.deps.json
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.runtimeconfig.json
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.runtimeconfig.dev.json
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ChuKySoRSA.pdb
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\ASodium.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\BCASodium.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\Waher.Events.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\Waher.Runtime.Temporary.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\Waher.Security.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\Waher.Security.EllipticCurves.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\Waher.Security.SHA3.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libsodium.so
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsodium.so
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsodium.dylib
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libsodium.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libsodium.dll
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.AssemblyReference.cache
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.fMain.resources
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.Properties.Resources.resources
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.GenerateResource.cache
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.AssemblyInfoInputs.cache
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.AssemblyInfo.cs
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.CoreCompileInputs.cache
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.csproj.CopyComplete
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.dll
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.pdb
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\netcoreapp3.1\ChuKySoRSA.genruntimeconfig.cache

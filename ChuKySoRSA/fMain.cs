@@ -33,6 +33,7 @@ namespace ChuKySoRSA
         //event tạo chữ ký
         Aes myAes;
         byte[] encrypted;
+		string convert;
         private void btTaoChuKy_Click(object sender, EventArgs e)
         {
             // kiểm tra tồn tại path không
@@ -42,32 +43,34 @@ namespace ChuKySoRSA
             }
             if (File.Exists(textDuongDanGui.Text))
             {
-                //mở file ra
-                
+                //Lấy giá trị string của file
                 StreamReader fileReader = new StreamReader($"{textDuongDanGui.Text}");
                 string text = fileReader.ReadToEnd();
                 fileReader.Close();
                 fileReader.Dispose();
-                FileStream fsFileDauVao = new FileStream(textDuongDanGui.Text, FileMode.Open);
-                myAes = Aes.Create();
+
+				//Mã hoá AES 
+				myAes = Aes.Create();
                 encrypted = EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
-                SHAKE256 myShake256 = new SHAKE256(256);
-                byte[] byteMaHoa = myShake256.ComputeVariable(fsFileDauVao);
-                string FileVBKy = Convert.ToBase64String(byteMaHoa);
-                
+				
+
+				byte[] byteMaHoa = Encoding.ASCII.GetBytes(text);
+
                 Edwards448 myEd448 = new Edwards448();
                 byte[] sign = myEd448.Sign(byteMaHoa);
                 textHienThiPublicKey.Text = Convert.ToBase64String(myEd448.PublicKey);
                 string tepKyGui = Convert.ToBase64String(sign);
                 textTepKyGui.Text = tepKyGui;
-                fsFileDauVao.Close();
-                fsFileDauVao.Dispose();
                 MessageBox.Show("Thực hiện ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btTaoChuKy.Enabled = false;// ẩn nút Tạo chữ ký 
-            }
+
+				//Xuất file .txt của file encrypted
+				convert = Convert.ToBase64String(encrypted);
+				System.IO.File.WriteAllText(@"D:\text.txt", convert);
+			}
         }
 
-        private void btKiemTra_Click(object sender, EventArgs e)
+		private void btKiemTra_Click(object sender, EventArgs e)
         {
             if (!File.Exists(textDuongDanNhan.Text))
             {
@@ -75,13 +78,20 @@ namespace ChuKySoRSA
             }
             if (File.Exists(textDuongDanNhan.Text))
             {
-                FileStream fsFileDauVao = new FileStream(textDuongDanNhan.Text, FileMode.Open);
-                SHAKE256 myShake256 = new SHAKE256(256);
-                byte[] byteGiaiMa = myShake256.ComputeVariable(fsFileDauVao);
-                string roundtrip = DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);
+				StreamReader fsFileDauVao = new StreamReader($"{textDuongDanNhan.Text}");
+				string text = fsFileDauVao.ReadToEnd();
+				fsFileDauVao.Close();
+				fsFileDauVao.Dispose();
+				//Convert Stream to bytes
+
+				byte[] byteEncrypted = Convert.FromBase64String(text);
+
+				string roundtrip = DecryptStringFromBytes_Aes(byteEncrypted, myAes.Key, myAes.IV);
+
+				byte[] bytegiaima = Encoding.ASCII.GetBytes(roundtrip);
                 
                 Edwards448 giaiMa = new Edwards448();
-                var result = giaiMa.Verify(byteGiaiMa, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
+                var result = giaiMa.Verify(bytegiaima, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
 
                 if (result)
                 {
@@ -93,10 +103,7 @@ namespace ChuKySoRSA
                     MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btKiemTra.Enabled = false;
                 }
-                fsFileDauVao.Close();
-                fsFileDauVao.Dispose();
-                
-            }
+			}
         }
         private void fMain_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECT\\c#\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA.csproj": {}
+    "D:\\Visual studio\\digital signature\\ChuKySoRSA\\ChuKySoRSA.csproj": {}
   },
   "projects": {
-    "D:\\PROJECT\\c#\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA.csproj": {
+    "D:\\Visual studio\\digital signature\\ChuKySoRSA\\ChuKySoRSA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECT\\c#\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA.csproj",
+        "projectUniqueName": "D:\\Visual studio\\digital signature\\ChuKySoRSA\\ChuKySoRSA.csproj",
         "projectName": "ChuKySoRSA",
-        "projectPath": "D:\\PROJECT\\c#\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA.csproj",
-        "packagesPath": "C:\\Users\\theha\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECT\\c#\\ChuKySoRSA\\ChuKySoRSA\\ChuKySoRSA\\obj\\",
+        "projectPath": "D:\\Visual studio\\digital signature\\ChuKySoRSA\\ChuKySoRSA.csproj",
+        "packagesPath": "C:\\Users\\DucTran\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual studio\\digital signature\\ChuKySoRSA\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\1lerningapplication\\VisualStudio\\share\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\theha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\DucTran\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
