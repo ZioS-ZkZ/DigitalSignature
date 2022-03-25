@@ -32,8 +32,6 @@ namespace ChuKySoRSA
         }
         //event tạo chữ ký
         Aes myAes;
-        byte[] encrypted;
-		string convert;
         private void btTaoChuKy_Click(object sender, EventArgs e)
         {
             // kiểm tra tồn tại path không
@@ -51,7 +49,7 @@ namespace ChuKySoRSA
 
 				//Mã hoá AES 
 				myAes = Aes.Create();
-                encrypted = EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
+                byte[] encrypted = EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
 				
 
 				byte[] byteMaHoa = Encoding.ASCII.GetBytes(text);
@@ -64,9 +62,9 @@ namespace ChuKySoRSA
                 MessageBox.Show("Thực hiện ký thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btTaoChuKy.Enabled = false;// ẩn nút Tạo chữ ký 
 
-				//Xuất file .txt của file encrypted
-				convert = Convert.ToBase64String(encrypted);
-				System.IO.File.WriteAllText(@"D:\text.txt", convert);
+                //Xuất file .txt của file encrypted
+                string convert = Convert.ToBase64String(encrypted);
+				System.IO.File.WriteAllText(@"D:\TextGui.txt", convert);
 			}
         }
 
@@ -82,27 +80,36 @@ namespace ChuKySoRSA
 				string text = fsFileDauVao.ReadToEnd();
 				fsFileDauVao.Close();
 				fsFileDauVao.Dispose();
-				//Convert Stream to bytes
-
-				byte[] byteEncrypted = Convert.FromBase64String(text);
-
-				string roundtrip = DecryptStringFromBytes_Aes(byteEncrypted, myAes.Key, myAes.IV);
-
-				byte[] bytegiaima = Encoding.ASCII.GetBytes(roundtrip);
-                
-                Edwards448 giaiMa = new Edwards448();
-                var result = giaiMa.Verify(bytegiaima, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
-
-                if (result)
+                //Convert Stream to bytes
+                try
                 {
-                   MessageBox.Show("Tài liệu gửi đến không bị chỉnh sửa gì", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   btKiemTra.Enabled = false;
+                    byte[] byteEncrypted = Convert.FromBase64String(text);
+
+                    string roundtrip = DecryptStringFromBytes_Aes(byteEncrypted, myAes.Key, myAes.IV);
+
+                    byte[] bytegiaima = Encoding.ASCII.GetBytes(roundtrip);
+
+                    Edwards448 giaiMa = new Edwards448();
+                    var result = giaiMa.Verify(bytegiaima, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
+
+                    if (result)
+                    {
+                        MessageBox.Show("Tài liệu gửi đến không bị chỉnh sửa gì", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btKiemTra.Enabled = false;
+                        System.IO.File.WriteAllText(@"D:\TextNhan.txt", roundtrip);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        btKiemTra.Enabled = false;
+                    }
                 }
-                else
+                catch (Exception loi)
                 {
                     MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btKiemTra.Enabled = false;
                 }
+				
 			}
         }
         private void fMain_FormClosing(object sender, FormClosingEventArgs e)
