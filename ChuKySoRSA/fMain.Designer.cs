@@ -1,5 +1,5 @@
 ﻿
-namespace ChuKySoRSA
+namespace ChuKySo
 {
     partial class fMain
     {
@@ -180,7 +180,7 @@ namespace ChuKySoRSA
             // pB_damMay
             // 
             this.pB_damMay.BackColor = System.Drawing.Color.Transparent;
-            this.pB_damMay.BackgroundImage = global::ChuKySoRSA.Properties.Resources.clound_removebg_preview;
+            this.pB_damMay.BackgroundImage = global::ChuKySo.Properties.Resources.clound_removebg_preview;
             this.pB_damMay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pB_damMay.Location = new System.Drawing.Point(407, 164);
             this.pB_damMay.Name = "pB_damMay";
@@ -190,7 +190,7 @@ namespace ChuKySoRSA
             // 
             // pB_arrow
             // 
-            this.pB_arrow.BackgroundImage = global::ChuKySoRSA.Properties.Resources.muiten_removebg_preview;
+            this.pB_arrow.BackgroundImage = global::ChuKySo.Properties.Resources.muiten_removebg_preview;
             this.pB_arrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pB_arrow.Location = new System.Drawing.Point(310, 287);
             this.pB_arrow.Name = "pB_arrow";
@@ -200,7 +200,7 @@ namespace ChuKySoRSA
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::ChuKySoRSA.Properties.Resources.muiten_removebg_preview;
+            this.pictureBox1.BackgroundImage = global::ChuKySo.Properties.Resources.muiten_removebg_preview;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(796, 287);
             this.pictureBox1.Name = "pictureBox1";

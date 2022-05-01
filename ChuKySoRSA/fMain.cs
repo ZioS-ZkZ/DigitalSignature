@@ -5,7 +5,7 @@ using System.IO;
 using System.Security.Cryptography;
 using Waher.Security.EllipticCurves;
 using Waher.Security.SHA3;
-namespace ChuKySoRSA
+namespace ChuKySo
 {
     public partial class fMain : Form
     {
@@ -47,15 +47,24 @@ namespace ChuKySoRSA
                 fileReader.Close();
                 fileReader.Dispose();
 
-				//Mã hoá AES 
+				//Tạo key và IV
 				myAes = Aes.Create();
+				myAes.KeySize = 256;
+				myAes.BlockSize = 128;
+				myAes.Mode = CipherMode.CBC;
+				myAes.Padding = PaddingMode.PKCS7;
+				myAes.GenerateIV();
+				myAes.GenerateKey();
+
+				//Mã hoá AES 
                 byte[] encrypted = EncryptStringToBytes_Aes(text, myAes.Key, myAes.IV);
+
 				
 
-				byte[] byteMaHoa = Encoding.ASCII.GetBytes(text);
+				//byte[] byteMaHoa = Encoding.ASCII.GetBytes(text);
 
                 Edwards448 myEd448 = new Edwards448();
-                byte[] sign = myEd448.Sign(byteMaHoa);
+                byte[] sign = myEd448.Sign(encrypted);
                 textHienThiPublicKey.Text = Convert.ToBase64String(myEd448.PublicKey);
                 string tepKyGui = Convert.ToBase64String(sign);
                 textTepKyGui.Text = tepKyGui;
@@ -64,7 +73,8 @@ namespace ChuKySoRSA
 
                 //Xuất file .txt của file encrypted
                 string convert = Convert.ToBase64String(encrypted);
-				System.IO.File.WriteAllText(@"D:\TextGui.txt", convert);
+				System.IO.File.WriteAllText(@"D:\TextGui_Encrypted.txt", convert);
+				System.IO.File.WriteAllText(@"D:\TextGui_Original.txt", text);
 			}
         }
 
@@ -83,20 +93,22 @@ namespace ChuKySoRSA
                 //Convert Stream to bytes
                 try
                 {
-                    byte[] byteEncrypted = Convert.FromBase64String(text);
+					//byte[] byteEncrypted = Convert.FromBase64String(text);
 
-                    string roundtrip = DecryptStringFromBytes_Aes(byteEncrypted, myAes.Key, myAes.IV);
+					//string roundtrip = DecryptStringFromBytes_Aes(byteEncrypted, myAes.Key, myAes.IV);
 
-                    byte[] bytegiaima = Encoding.ASCII.GetBytes(roundtrip);
+					//byte[] bytegiaima = Encoding.ASCII.GetBytes(roundtrip);
+					byte[] dataToVerify = Convert.FromBase64String(text);
+					string originalData = DecryptStringFromBytes_Aes(dataToVerify, myAes.Key, myAes.IV);
+						System.IO.File.WriteAllText(@"D:\TextNhan.txt", originalData);
 
                     Edwards448 giaiMa = new Edwards448();
-                    var result = giaiMa.Verify(bytegiaima, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
+                    var result = giaiMa.Verify(dataToVerify, Convert.FromBase64String(textHienThiPublicKey.Text), Convert.FromBase64String(textTepKyGui.Text));
 
                     if (result)
                     {
                         MessageBox.Show("Tài liệu gửi đến không bị chỉnh sửa gì", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btKiemTra.Enabled = false;
-                        System.IO.File.WriteAllText(@"D:\TextNhan.txt", roundtrip);
                     }
                     else
                     {
@@ -106,8 +118,8 @@ namespace ChuKySoRSA
                 }
                 catch (Exception loi)
                 {
-                    MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btKiemTra.Enabled = false;
+                    //MessageBox.Show("Tài liệu gửi đến đã bị thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //btKiemTra.Enabled = false;
                 }
 				
 			}
@@ -132,11 +144,14 @@ namespace ChuKySoRSA
             // with the specified key and IV.
             using (Aes aesAlg = Aes.Create())
             {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
-
-                // Create an encryptor to perform the stream transform.
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+				aesAlg.KeySize = 256;
+				aesAlg.BlockSize = 128;
+				aesAlg.Mode = CipherMode.CBC;
+				aesAlg.Padding = PaddingMode.PKCS7;
+				aesAlg.Key = Key;
+				aesAlg.IV = IV;
+				// Create an encryptor to perform the stream transform.
+				ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
                 // Create the streams used for encryption.
                 using (MemoryStream msEncrypt = new MemoryStream())
@@ -175,11 +190,15 @@ namespace ChuKySoRSA
             // with the specified key and IV.
             using (Aes aesAlg = Aes.Create())
             {
-                aesAlg.Key = Key;
-                aesAlg.IV = IV;
+				aesAlg.KeySize = 256;
+				aesAlg.BlockSize = 128;
+				aesAlg.Mode = CipherMode.CBC;
+				aesAlg.Padding = PaddingMode.PKCS7;
+				aesAlg.Key = Key;
+				aesAlg.IV = IV;
 
-                // Create a decryptor to perform the stream transform.
-                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+				// Create a decryptor to perform the stream transform.
+				ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
 
                 // Create the streams used for decryption.
                 using (MemoryStream msDecrypt = new MemoryStream(cipherText))

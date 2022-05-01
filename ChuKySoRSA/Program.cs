@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ChuKySoRSA
+namespace ChuKySo
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace ChuKySoRSA
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
+            Application.Run(new Main_Screen_Patient());
         }
     }
 }
