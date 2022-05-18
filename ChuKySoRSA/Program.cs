@@ -17,7 +17,7 @@ namespace ChuKySo
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Screen_Patient());
+            Application.Run(new Login());
         }
     }
 }
