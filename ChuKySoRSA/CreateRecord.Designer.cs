@@ -104,9 +104,9 @@
 			// txtTuoi
 			// 
 			txtTuoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			txtTuoi.Left = 820;
+			txtTuoi.Left = 840;
 			txtTuoi.Top = 172;
-			txtTuoi.Width = 104;
+			txtTuoi.Width = 84;
 			txtTuoi.Height = 39;
 			txtTuoi.Name = "txtTuoi";
 			txtTuoi.TabIndex = 7;
@@ -115,7 +115,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.Left = 547;
+			this.label3.Left = 517;
 			this.label3.Top = 172;
 			this.label3.Width = 105;
 			this.label3.Height = 32;
@@ -127,13 +127,13 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label4.Left = 753;
+			this.label4.Left = 723;
 			this.label4.Top = 175;
 			this.label4.Width = 61;
 			this.label4.Height = 32;
 			this.label4.Name = "label4";
 			this.label4.TabIndex = 10;
-			this.label4.Text = "Tuổi";
+			this.label4.Text = "Năm sinh";
 			// 
 			// txtWeight
 			// 
@@ -308,7 +308,7 @@
 			checkListGender.Items.AddRange(new object[] {
 			"Nam",
 			"Nữ"});
-			checkListGender.Left = 658;
+			checkListGender.Left = 628;
 			checkListGender.Top = 151;
 			checkListGender.Width = 83;
 			checkListGender.Height = 60;

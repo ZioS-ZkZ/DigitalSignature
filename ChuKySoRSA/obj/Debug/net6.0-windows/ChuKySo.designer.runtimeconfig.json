@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\theha\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\theha\\.nuget\\packages"
+      "C:\\Users\\DucTran\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\DucTran\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

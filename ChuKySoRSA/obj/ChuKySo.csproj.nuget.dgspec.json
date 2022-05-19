@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECT\\c#\\digitalSignature\\ChuKySoRSA\\ChuKySo.csproj": {}
+    "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj": {}
   },
   "projects": {
-    "D:\\PROJECT\\c#\\digitalSignature\\ChuKySoRSA\\ChuKySo.csproj": {
+    "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECT\\c#\\digitalSignature\\ChuKySoRSA\\ChuKySo.csproj",
+        "projectUniqueName": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj",
         "projectName": "ChuKySo",
-        "projectPath": "D:\\PROJECT\\c#\\digitalSignature\\ChuKySoRSA\\ChuKySo.csproj",
-        "packagesPath": "C:\\Users\\theha\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECT\\c#\\digitalSignature\\ChuKySoRSA\\obj\\",
+        "projectPath": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj",
+        "packagesPath": "C:\\Users\\DucTran\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\theha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DucTran\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

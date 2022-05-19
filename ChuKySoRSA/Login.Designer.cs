@@ -123,9 +123,7 @@
             this.cbDone.Width = 322;
             this.cbDone.Height = 24;
             this.cbDone.AutoSize = true;
-            this.cbDone.Location = new System.Drawing.Point(232, 428);
             this.cbDone.Name = "cbDone";
-            this.cbDone.Size = new System.Drawing.Size(322, 24);
             this.cbDone.TabIndex = 15;
             this.cbDone.Text = "Tôi cam đoan thông tin trên là đúng sự thật ";
             this.cbDone.UseVisualStyleBackColor = true;
@@ -151,9 +149,7 @@
             this.label7.Width = 61;
             this.label7.Height = 20;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 380);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Position";
             // 
@@ -308,11 +304,12 @@
             // 
             // Login
             // 
-            this.cbDone.Width = 772;
-            this.cbDone.Height = 579;
+            //this.cbDone.Width = 772;
+            //this.cbDone.Height = 579;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 579);
-            this.Controls.Add(this.plDisplay1);
+            this.ClientSize = new System.Drawing.Size(762, 600);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+			this.Controls.Add(this.plDisplay1);
             this.Controls.Add(this.plDisplay2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

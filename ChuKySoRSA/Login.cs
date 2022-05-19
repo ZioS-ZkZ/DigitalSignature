@@ -142,7 +142,7 @@ namespace ChuKySo
             // cbCheck
             // 
             cbCheck.Width = 322;
-            cbCheck.Height = 24;
+            cbCheck.Height = 44;
             cbCheck.Left = 250;
             cbCheck.Top = 280;
             cbCheck.Text = "Tôi không phải người máy";
@@ -154,7 +154,7 @@ namespace ChuKySo
             txtPassLogin.Top = 220;
             txtPassLogin.TabIndex = 1;
             txtPassLogin.UseSystemPasswordChar = true;
-            lbPassword.Width = 70;
+            lbPassword.Width = 90;
             lbPassword.Height = 20;
             lbPassword.Left = 150;
             lbPassword.Top = 220;
@@ -167,7 +167,7 @@ namespace ChuKySo
             txtUserLogin.Left = 332;
             txtUserLogin.Top = 180;
             txtUserLogin.TabIndex = 0;
-            lbUsername.Width =75 ;
+            lbUsername.Width =95 ;
             lbUsername.Height = 20;
             lbUsername.Left = 150;
             lbUsername.Top = 180;
@@ -228,6 +228,7 @@ namespace ChuKySo
                                 this.Hide();
                                 formDoctor.ShowDialog();
                                 this.Show();
+								Main_Sreen_Doctor.DoctorID = Main_Sreen_Doctor.DoctorName = "";
                             }
                             else
                             {
@@ -242,8 +243,9 @@ namespace ChuKySo
                                 this.Hide();
                                 formPatien.ShowDialog();
                                 this.Show();
-                            }
-                        }
+								Main_Screen_Patient.PatientID = "";
+							}
+						}
                         else
                         {
                             MessageBox.Show("Bạn nhập sai hoặc tài khoản không tồn tại !!!", "Thông báo !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -168,7 +168,7 @@
             label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.TabIndex = 6;
-            label5.Text = "Sinh nhật";
+            label5.Text = "Ngày sinh";
             // 
             // txtSex
             // 

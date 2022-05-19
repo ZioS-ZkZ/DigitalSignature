@@ -16,7 +16,7 @@ namespace ChuKySo
 {
 	public partial class Main_Screen_Patient : Form
 	{
-		public static string PatientID;
+		public static string PatientID = "";
 
 		public Main_Screen_Patient()
 		{
@@ -113,6 +113,8 @@ namespace ChuKySo
 			CreateRecord.btnSubmit.Visible = false;
 
 			CreateRecord.checkAllergies.Enabled = CreateRecord.txtBloodGrp.Enabled = CreateRecord.checkDiabetes.Enabled = CreateRecord.checkListGender.Enabled = CreateRecord.txtBMI.Enabled = CreateRecord.txtHeight.Enabled = CreateRecord.txtIDPatient.Enabled = CreateRecord.txtNamePatient.Enabled = CreateRecord.txtTuoi.Enabled = CreateRecord.txtWeight.Enabled = false;
+			CreateRecord.txtNameDoctor.Text = originalData[0];
+			CreateRecord.txtIDDoctor.Text = originalData[1];
 			CreateRecord.txtIDPatient.Text = originalData[2];
 			CreateRecord.txtNamePatient.Text = originalData[3];
 			if (originalData[4] != "")

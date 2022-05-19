@@ -17,8 +17,8 @@ namespace ChuKySo
 {
 	public partial class Main_Sreen_Doctor : Form
 	{
-		public static string DoctorName;
-		public static string DoctorID;
+		public static string DoctorName = "";
+		public static string DoctorID = "";
 
 		public Main_Sreen_Doctor()
 		{
