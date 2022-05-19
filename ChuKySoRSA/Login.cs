@@ -46,9 +46,9 @@ namespace ChuKySo
                     string inforSaveName = Convert.ToBase64String(encryptedName);
                     byte[] encryptedAddress = CreateRecord.EncryptStringToBytes_Aes(txtAddress.Text, myAes.Key, myAes.IV);
                     string inforSaveAddress = Convert.ToBase64String(encryptedAddress);
-                    byte[] encryptedSex = CreateRecord.EncryptStringToBytes_Aes((cbNam.Checked)? cbNam.Text: cbNu.Text, myAes.Key, myAes.IV);
+                    byte[] encryptedSex = CreateRecord.EncryptStringToBytes_Aes((cbNam.Checked==true)? cbNam.Text: cbNu.Text, myAes.Key, myAes.IV);
                     string inforSaveSex = Convert.ToBase64String(encryptedSex);
-                    byte[] encryptedBirth = CreateRecord.EncryptStringToBytes_Aes(birthDay.Text, myAes.Key, myAes.IV);
+                    byte[] encryptedBirth = CreateRecord.EncryptStringToBytes_Aes(birthDay.Text.ToString(), myAes.Key, myAes.IV);
                     string inforSaveBirth = Convert.ToBase64String(encryptedBirth);
                     string stringKeyaes = Convert.ToBase64String(myAes.Key);
                     string stringIVaes = Convert.ToBase64String(myAes.IV);
@@ -103,6 +103,7 @@ namespace ChuKySo
             else
             {
                 this.plDisplay1.Controls.Clear();
+                this.plDisplay2.Controls.Clear();
                 this.plDisplay1.Controls.Add(this.cbHienThiPass);
                 this.plDisplay1.Controls.Add(this.cbDone);
                 this.plDisplay1.Controls.Add(this.cbPos);
@@ -120,6 +121,7 @@ namespace ChuKySo
                 this.plDisplay1.Controls.Add(this.label2);
                 this.plDisplay1.Controls.Add(this.txtUsername);
                 this.plDisplay1.Controls.Add(this.label1);
+                this.plDisplay2.Controls.Add(this.btRegis);
                 this.plDisplay2.Controls.Add(this.btLogin);
                 cbPos.Text = txtAddress.Text=txtName.Text=txtPassword.Text=txtUsername.Text = string.Empty;
                 cbNam.Checked = cbNu.Checked = false;
@@ -219,8 +221,8 @@ namespace ChuKySo
                                 Main_Sreen_Doctor formDoctor = new Main_Sreen_Doctor();
                                 Main_Sreen_Doctor.txtID.Text = CreateRecord.SelectData(querySelectID, "")[0, 0];
                                 Main_Sreen_Doctor.txtName.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectName, "")[0, 0]), Key, IV);
-                                //Main_Sreen_Doctor.txtSex.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectSex, "")[0, 0]), Key, IV);
-                                //Main_Sreen_Doctor.txtBirth.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectBirth, "")[0, 0]), Key, IV);
+                                Main_Sreen_Doctor.txtSex.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectSex, "")[0, 0]), Key, IV);
+                                Main_Sreen_Doctor.txtBirth.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectBirth, "")[0, 0]), Key, IV);
                                 Main_Sreen_Doctor.txtAddress.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectAddress, "")[0, 0]), Key, IV);
 
                                 this.Hide();
@@ -233,8 +235,8 @@ namespace ChuKySo
                                 Main_Screen_Patient formPatien = new Main_Screen_Patient();
                                 Main_Screen_Patient.txtID.Text = CreateRecord.SelectData(querySelectID, "")[0, 0];
                                 Main_Screen_Patient.txtName.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectName, "")[0, 0]), Key, IV);
-                                //Main_Screen_Patient.txtSex.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectSex, "")[0, 0]), Key, IV);
-                                //Main_Screen_Patient.txtBirth.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectBirth, "")[0, 0]), Key, IV);
+                                Main_Screen_Patient.txtSex.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectSex, "")[0, 0]), Key, IV);
+                                Main_Screen_Patient.txtBirth.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectBirth, "")[0, 0]), Key, IV);
                                 Main_Screen_Patient.txtAddress.Text = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectAddress, "")[0, 0]), Key, IV);
 
                                 this.Hide();

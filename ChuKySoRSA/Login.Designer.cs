@@ -58,16 +58,20 @@
             this.plDisplay2.Controls.Add(this.btLogin);
             this.plDisplay2.Controls.Add(this.btRegis);
             this.plDisplay2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plDisplay2.Location = new System.Drawing.Point(0, 458);
             this.plDisplay2.Name = "plDisplay2";
-            this.plDisplay2.Size = new System.Drawing.Size(722, 121);
+            this.plDisplay1.Left = 0;
+            this.plDisplay2.Top = 458;
+            this.plDisplay1.Width = 722;
+            this.plDisplay1.Height = 121;
             this.plDisplay2.TabIndex = 0;
             // 
             // btLogin
             // 
-            this.btLogin.Location = new System.Drawing.Point(435, 25);
+            this.btLogin.Left = 435;
+            this.btLogin.Top =25 ;
+            this.btLogin.Width = 151;
+            this.btLogin.Height = 62;
             this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(151, 62);
             this.btLogin.TabIndex = 1;
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = true;
@@ -75,9 +79,11 @@
             // 
             // btRegis
             // 
-            this.btRegis.Location = new System.Drawing.Point(172, 25);
+            this.btRegis.Left = 172;
+            this.btRegis.Top = 25;
+            this.btRegis.Width = 151;
+            this.btRegis.Height = 62;
             this.btRegis.Name = "btRegis";
-            this.btRegis.Size = new System.Drawing.Size(151, 62);
             this.btRegis.TabIndex = 0;
             this.btRegis.Text = "Registration";
             this.btRegis.UseVisualStyleBackColor = true;
@@ -103,13 +109,19 @@
             this.plDisplay1.Controls.Add(this.txtUsername);
             this.plDisplay1.Controls.Add(this.label1);
             this.plDisplay1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plDisplay1.Location = new System.Drawing.Point(0, 0);
             this.plDisplay1.Name = "plDisplay1";
-            this.plDisplay1.Size = new System.Drawing.Size(722, 458);
             this.plDisplay1.TabIndex = 1;
+            this.plDisplay1.Left = 0;
+            this.plDisplay1.Top = 0;
+            this.plDisplay1.Width = 722;
+            this.plDisplay1.Height = 458;
             // 
             // cbDone
             // 
+            this.cbDone.Left = 232;
+            this.cbDone.Top = 428;
+            this.cbDone.Width = 322;
+            this.cbDone.Height = 24;
             this.cbDone.AutoSize = true;
             this.cbDone.Location = new System.Drawing.Point(232, 428);
             this.cbDone.Name = "cbDone";
@@ -120,18 +132,24 @@
             // 
             // cbPos
             // 
+            this.cbPos.Left = 264;
+            this.cbPos.Top = 388;
+            this.cbPos.Width = 273;
+            this.cbPos.Height = 28;
             this.cbPos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPos.FormattingEnabled = true;
             this.cbPos.Items.AddRange(new object[] {
             "Doctor",
             "Patien"});
-            this.cbPos.Location = new System.Drawing.Point(264, 380);
             this.cbPos.Name = "cbPos";
-            this.cbPos.Size = new System.Drawing.Size(273, 28);
             this.cbPos.TabIndex = 14;
             // 
             // label7
             // 
+            this.label7.Left = 155;
+            this.label7.Top = 388;
+            this.label7.Width = 61;
+            this.label7.Height = 20;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(155, 380);
             this.label7.Name = "label7";
@@ -141,120 +159,148 @@
             // 
             // label6
             // 
+            this.label6.Left = 155;
+            this.label6.Top = 317;
+            this.label6.Width = 64;
+            this.label6.Height = 20;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(155, 317);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Birthday";
             // 
             // birthDay
             // 
-            this.birthDay.Location = new System.Drawing.Point(264, 312);
+            this.birthDay.Left = 264;
+            this.birthDay.Top = 312;
+            this.birthDay.Width = 273;
+            this.birthDay.Height = 27;
             this.birthDay.Name = "birthDay";
-            this.birthDay.Size = new System.Drawing.Size(273, 27);
             this.birthDay.TabIndex = 11;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(264, 251);
+            this.txtAddress.Left = 264;
+            this.txtAddress.Top = 251;
+            this.txtAddress.Width = 273;
+            this.txtAddress.Height = 27;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(273, 27);
             this.txtAddress.TabIndex = 10;
             // 
             // label5
             // 
+            this.label5.Left = 155;
+            this.label5.Top = 258;
+            this.label5.Width = 62;
+            this.label5.Height = 20;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(155, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Address";
             // 
             // cbNu
             // 
+            this.cbNu.Left = 367;
+            this.cbNu.Top = 196;
+            this.cbNu.Width = 51;
+            this.cbNu.Height = 24;
             this.cbNu.AutoSize = true;
-            this.cbNu.Location = new System.Drawing.Point(367, 196);
             this.cbNu.Name = "cbNu";
-            this.cbNu.Size = new System.Drawing.Size(51, 24);
             this.cbNu.TabIndex = 8;
             this.cbNu.Text = "Nữ";
             this.cbNu.UseVisualStyleBackColor = true;
             // 
             // cbNam
             // 
+            this.cbNam.Left = 264;
+            this.cbNam.Top = 196;
+            this.cbNam.Width = 63;
+            this.cbNam.Height = 24;
             this.cbNam.AutoSize = true;
-            this.cbNam.Location = new System.Drawing.Point(264, 196);
             this.cbNam.Name = "cbNam";
-            this.cbNam.Size = new System.Drawing.Size(63, 24);
             this.cbNam.TabIndex = 7;
             this.cbNam.Text = "Nam";
             this.cbNam.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
+            this.label4.Left = 155;
+            this.label4.Top = 196;
+            this.label4.Width = 36;
+            this.label4.Height = 20;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(155, 196);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Sex ";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(264, 130);
+            this.txtName.Left = 264;
+            this.txtName.Top = 130;
+            this.txtName.Width = 273;
+            this.txtName.Height = 27;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(273, 27);
             this.txtName.TabIndex = 5;
             // 
             // label3
             // 
+            this.label3.Left = 155;
+            this.label3.Top = 137;
+            this.label3.Width = 49;
+            this.label3.Height = 20;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Name";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(264, 76);
+            this.txtPassword.Left = 264;
+            this.txtPassword.Top = 76;
+            this.txtPassword.Width = 273;
+            this.txtPassword.Height = 27;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(273, 27);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
+            this.label2.Left = 155;
+            this.label2.Top = 83;
+            this.label2.Width = 70;
+            this.label2.Height = 20;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(155, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(264, 25);
+            this.txtUsername.Left = 264;
+            this.txtUsername.Top = 25;
+            this.txtUsername.Width = 273;
+            this.txtUsername.Height = 27; 
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(273, 27);
             this.txtUsername.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Left = 155;
+            this.label1.Top = 32;
+            this.label1.Width = 75;
+            this.label1.Height = 20;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
             // cbHienThiPass
             // 
+            this.cbHienThiPass.Left = 552;
+            this.cbHienThiPass.Top = 79;
+            this.cbHienThiPass.Width = 148;
+            this.cbHienThiPass.Height = 24;
             this.cbHienThiPass.AutoSize = true;
-            this.cbHienThiPass.Location = new System.Drawing.Point(552, 79);
             this.cbHienThiPass.Name = "cbHienThiPass";
-            this.cbHienThiPass.Size = new System.Drawing.Size(148, 24);
             this.cbHienThiPass.TabIndex = 16;
             this.cbHienThiPass.Text = "Hiển thị mật khẩu";
             this.cbHienThiPass.UseVisualStyleBackColor = true;
@@ -262,7 +308,8 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.cbDone.Width = 772;
+            this.cbDone.Height = 579;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 579);
             this.Controls.Add(this.plDisplay1);
