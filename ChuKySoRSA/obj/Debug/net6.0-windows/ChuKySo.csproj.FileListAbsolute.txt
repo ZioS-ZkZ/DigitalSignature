@@ -127,3 +127,7 @@ D:\Visual studio\Project MMH\ChuKySoRSA\obj\Debug\net6.0-windows\refint\ChuKySo.
 D:\Visual studio\Project MMH\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.pdb
 D:\Visual studio\Project MMH\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.genruntimeconfig.cache
 D:\Visual studio\Project MMH\ChuKySoRSA\obj\Debug\net6.0-windows\ref\ChuKySo.dll
+D:\Visual studio\Project MMH\ChuKySoRSA\bin\Debug\net6.0-windows\TSS.Net.dll
+D:\Visual studio\Project MMH\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-arm\lib\netcoreapp2.0\TSS.Net.dll
+D:\Visual studio\Project MMH\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-musl-x64\lib\netcoreapp2.1\TSS.Net.dll
+D:\Visual studio\Project MMH\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-x64\lib\netcoreapp2.0\TSS.Net.dll

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="BCASodium" Version="0.0.5" />
+    <PackageReference Include="Microsoft.TSS" Version="2.1.1" />
     <PackageReference Include="MySql.Data" Version="8.0.29" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     <PackageReference Include="Waher.Security.EllipticCurves" Version="1.0.9" />

@@ -114,6 +114,34 @@
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.TSS/2.1.1": {
+        "runtime": {
+          "lib/netcoreapp2.0/TSS.Net.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/lib/netcoreapp2.0/TSS.Net.dll": {
+            "rid": "linux-arm",
+            "assetType": "runtime",
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          },
+          "runtimes/linux-musl-x64/lib/netcoreapp2.1/TSS.Net.dll": {
+            "rid": "linux-musl-x64",
+            "assetType": "runtime",
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.0/TSS.Net.dll": {
+            "rid": "linux-x64",
+            "assetType": "runtime",
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1462,6 +1490,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.TSS/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-87DBN+4ANSFO8TDRmFjjTBl6PL7tmrfofmxki4LUnE34gOdyQiBfJK/X1QSu0UfCGUtpoBVv/tD985s4FDpKiA==",
+      "path": "microsoft.tss/2.1.1",
+      "hashPath": "microsoft.tss.2.1.1.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",

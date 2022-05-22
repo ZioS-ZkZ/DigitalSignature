@@ -129,6 +129,29 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.TSS/2.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/TSS.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/TSS.Net.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/lib/netcoreapp2.0/TSS.Net.dll": {
+            "assetType": "runtime",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-musl-x64/lib/netcoreapp2.1/TSS.Net.dll": {
+            "assetType": "runtime",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/lib/netcoreapp2.0/TSS.Net.dll": {
+            "assetType": "runtime",
+            "rid": "linux-x64"
+          }
+        }
+      },
       "Microsoft.Win32.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1751,6 +1774,36 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.TSS/2.1.1": {
+      "sha512": "87DBN+4ANSFO8TDRmFjjTBl6PL7tmrfofmxki4LUnE34gOdyQiBfJK/X1QSu0UfCGUtpoBVv/tD985s4FDpKiA==",
+      "type": "package",
+      "path": "microsoft.tss/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/TSS.Net.dll",
+        "lib/net46/TSS.Net.pdb",
+        "lib/netcoreapp2.0/TSS.Net.deps.json",
+        "lib/netcoreapp2.0/TSS.Net.dll",
+        "lib/netcoreapp2.0/TSS.Net.pdb",
+        "lib/netstandard2.0/TSS.Net.deps.json",
+        "lib/netstandard2.0/TSS.Net.dll",
+        "lib/netstandard2.0/TSS.Net.pdb",
+        "lib/uap10.0/TSS.Net.dll",
+        "lib/uap10.0/TSS.Net.pdb",
+        "microsoft.tss.2.1.1.nupkg.sha512",
+        "microsoft.tss.nuspec",
+        "runtimes/linux-arm/lib/netcoreapp2.0/TSS.Net.deps.json",
+        "runtimes/linux-arm/lib/netcoreapp2.0/TSS.Net.dll",
+        "runtimes/linux-arm/lib/netcoreapp2.0/TSS.Net.pdb",
+        "runtimes/linux-musl-x64/lib/netcoreapp2.1/TSS.Net.deps.json",
+        "runtimes/linux-musl-x64/lib/netcoreapp2.1/TSS.Net.dll",
+        "runtimes/linux-musl-x64/lib/netcoreapp2.1/TSS.Net.pdb",
+        "runtimes/linux-x64/lib/netcoreapp2.0/TSS.Net.deps.json",
+        "runtimes/linux-x64/lib/netcoreapp2.0/TSS.Net.dll",
+        "runtimes/linux-x64/lib/netcoreapp2.0/TSS.Net.pdb"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -5514,6 +5567,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "BCASodium >= 0.0.5",
+      "Microsoft.TSS >= 2.1.1",
       "MySql.Data >= 8.0.29",
       "Portable.BouncyCastle >= 1.9.0",
       "Waher.Security.EllipticCurves >= 1.0.9"
@@ -5561,6 +5615,10 @@
           "BCASodium": {
             "target": "Package",
             "version": "[0.0.5, )"
+          },
+          "Microsoft.TSS": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "MySql.Data": {
             "target": "Package",

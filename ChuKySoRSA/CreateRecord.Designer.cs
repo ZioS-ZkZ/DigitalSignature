@@ -325,6 +325,7 @@
 			txtIDPatient.Height = 39;
 			txtIDPatient.Name = "txtIDPatient";
 			txtIDPatient.TabIndex = 28;
+			txtIDPatient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIDPatient_KeyDown);
 			// 
 			// label11
 			// 

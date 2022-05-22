@@ -284,5 +284,21 @@ namespace ChuKySo
 				return null;
 			}
 		}
+
+		private void txtIDPatient_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				string query = "SELECT name, sex, birthday, keyAES, IV FROM account WHERE id_account = '" + txtIDPatient.Text + "'";
+				string[,] result = SelectData(query, "Bệnh nhân không tồn tại!");
+
+				byte[] Key = Convert.FromBase64String(result[0, 3]);
+				byte[] IV = Convert.FromBase64String(result[0, 4]);
+
+				txtNamePatient.Text = DecryptStringFromBytes_Aes(Convert.FromBase64String(result[0, 0]), Key, IV);
+				checkListGender.SetItemChecked(checkListGender.Items.IndexOf(DecryptStringFromBytes_Aes(Convert.FromBase64String(result[0, 1]), Key, IV)), true);
+				txtTuoi.Text = DecryptStringFromBytes_Aes(Convert.FromBase64String(result[0, 2]), Key, IV).Split(" ")[2];
+			}
+		}
 	}
 }
