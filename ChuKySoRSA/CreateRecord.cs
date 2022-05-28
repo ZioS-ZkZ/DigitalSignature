@@ -69,8 +69,14 @@ namespace ChuKySo
 			Edwards448 myEd448 = new Edwards448();
 			byte[] sign = myEd448.Sign(encrypted);
 
+			//Ký certificate 
+			Certificate certificate = new Certificate(Certificate.GetCertFromStore(), txtNameDoctor.Text, txtIDDoctor.Text, myEd448.PublicKey);
+			string Info = certificate.PrintCertificateInfo(Certificate.GetCertFromStore());
+			byte[] byteCerInfo = Encoding.UTF8.GetBytes(Info);
+
+
 			//Output
-			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(myEd448.PublicKey)}";
+			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(myEd448.PublicKey)}|{Convert.ToBase64String(byteCerInfo)}";
 
 			//Insert to database
 			string query = "INSERT INTO data_record (`data`) VALUES ('" + output + "')";

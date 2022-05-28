@@ -5574,19 +5574,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DucTran\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj",
+      "projectUniqueName": "D:\\MMH\\Đồ án\\DigitalSignature\\ChuKySoRSA\\ChuKySo.csproj",
       "projectName": "ChuKySo",
-      "projectPath": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\ChuKySo.csproj",
-      "packagesPath": "C:\\Users\\DucTran\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual studio\\Project MMH\\ChuKySoRSA\\obj\\",
+      "projectPath": "D:\\MMH\\Đồ án\\DigitalSignature\\ChuKySoRSA\\ChuKySo.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "D:\\MMH\\Đồ án\\DigitalSignature\\ChuKySoRSA\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\DucTran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

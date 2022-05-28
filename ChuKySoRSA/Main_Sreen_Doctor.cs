@@ -112,38 +112,82 @@ namespace ChuKySo
 			Edwards448 giaiMa = new Edwards448();
 			var result = giaiMa.Verify(byteData, Convert.FromBase64String(data[2]), Convert.FromBase64String(data[1]));
 
-			if (result)
-			{
-				MessageBox.Show("Hồ sơ đã được xác thực!");
+			//Xác nhận certificate
+			byte[] CertInfo = Convert.FromBase64String(data[3]);
+			string s_CertInfo = Encoding.UTF8.GetString(CertInfo);
 
-				//Decrypt AES
-				CreateRecord.DecryptStringFromBytes_Aes(byteData, keyaes, iv).Split('|').CopyTo(originalData, 0);
+
+			string[] CertData = s_CertInfo.Split('\n');
+			string[] CertSignature = CertData[8].Split(' ');
+			string[] SubjectPublicKey = CertData[3].Split(' ');
+			string CertIndentity = "";
+			for (int i = 0; i <= 7; i++)
+			{
+				CertIndentity += CertData[i];
+				CertIndentity += '\n';
+			}
+
+
+			MessageBox.Show(s_CertInfo, "Thông tin certificate");
+			//Xác thực certificate
+			bool result1 = Certificate.VerifyWithCert(Encoding.UTF8.GetBytes(CertIndentity), Certificate.StringToByteArray((CertSignature[1])));
+
+			//Xác thực publickey
+			if (result1)
+			{
+				if (Convert.ToBase64String(Certificate.StringToByteArray(SubjectPublicKey[3])) == data[2])
+					result1 = true;
+				else
+					result1 = false;
+			}
+
+			if(result1)
+            {
+				MessageBox.Show("Public key đã được xác thực!");
+
+				if (result)
+				{
+					MessageBox.Show("Hồ sơ đã được xác thực!");
+
+					//Decrypt AES
+					CreateRecord.DecryptStringFromBytes_Aes(byteData, keyaes, iv).Split('|').CopyTo(originalData, 0);
+				}
+				else
+				{
+					MessageBox.Show("Hồ sơ đã bị chỉnh sửa!");
+					return;
+				}
+
+				//Show detail form
+				ShowFormCreateRecord("Chi tiết hồ sơ");
+				CreateRecord.btnCancel.Text = "Back";
+				CreateRecord.btnSubmit.Visible = false;
+
+				CreateRecord.checkAllergies.Enabled = CreateRecord.txtBloodGrp.Enabled = CreateRecord.checkDiabetes.Enabled = CreateRecord.checkListGender.Enabled = CreateRecord.txtBMI.Enabled = CreateRecord.txtHeight.Enabled = CreateRecord.txtIDPatient.Enabled = CreateRecord.txtNamePatient.Enabled = CreateRecord.txtTuoi.Enabled = CreateRecord.txtWeight.Enabled = false;
+				CreateRecord.txtIDPatient.Text = originalData[2];
+				CreateRecord.txtNamePatient.Text = originalData[3];
+				if (originalData[4] != "")
+					CreateRecord.checkListGender.SetItemChecked(CreateRecord.checkListGender.Items.IndexOf(originalData[4]), true);
+				CreateRecord.txtTuoi.Text = originalData[5];
+				CreateRecord.txtWeight.Text = originalData[6];
+				CreateRecord.txtHeight.Text = originalData[7];
+				CreateRecord.txtBMI.Text = originalData[8];
+				CreateRecord.txtBloodGrp.Text = originalData[9];
+				if (originalData[10] != "")
+					CreateRecord.checkDiabetes.Checked = true;
+				if (originalData[11] != "")
+					CreateRecord.checkAllergies.Checked = true;
+
 			}
 			else
-			{
-				MessageBox.Show("Hồ sơ đã bị chỉnh sửa!");
-				return;
+            {
+				MessageBox.Show("Public key đã bị chỉnh sửa!");
 			}
 
-			//Show detail form
-			ShowFormCreateRecord("Chi tiết hồ sơ");
-			CreateRecord.btnCancel.Text = "Back";
-			CreateRecord.btnSubmit.Visible = false;
 
-			CreateRecord.checkAllergies.Enabled = CreateRecord.txtBloodGrp.Enabled = CreateRecord.checkDiabetes.Enabled = CreateRecord.checkListGender.Enabled = CreateRecord.txtBMI.Enabled = CreateRecord.txtHeight.Enabled = CreateRecord.txtIDPatient.Enabled = CreateRecord.txtNamePatient.Enabled = CreateRecord.txtTuoi.Enabled = CreateRecord.txtWeight.Enabled = false;
-			CreateRecord.txtIDPatient.Text = originalData[2];
-			CreateRecord.txtNamePatient.Text = originalData[3];
-			if (originalData[4] != "")
-				CreateRecord.checkListGender.SetItemChecked(CreateRecord.checkListGender.Items.IndexOf(originalData[4]), true);
-			CreateRecord.txtTuoi.Text = originalData[5];
-			CreateRecord.txtWeight.Text = originalData[6];
-			CreateRecord.txtHeight.Text = originalData[7];
-			CreateRecord.txtBMI.Text = originalData[8];
-			CreateRecord.txtBloodGrp.Text = originalData[9];
-			if (originalData[10] != "")
-				CreateRecord.checkDiabetes.Checked = true;
-			if (originalData[11] != "")
-				CreateRecord.checkAllergies.Checked = true;
+
+
+			
 		}
 
 		private static void BtnUpdate_Click(object sender, EventArgs e, string id, byte[] keyaes, byte[] iv)
@@ -195,8 +239,17 @@ namespace ChuKySo
 			Edwards448 myEd448 = new Edwards448();
 			byte[] sign = myEd448.Sign(encrypted);
 
+			//Ký certificate 
+			Certificate certificate = new Certificate(Certificate.GetCertFromStore(), DoctorName, DoctorID, myEd448.PublicKey);
+			string Info = certificate.PrintCertificateInfo(Certificate.GetCertFromStore());
+			byte[] byteCerInfo = Encoding.UTF8.GetBytes(Info);
+
+
+
 			//Output
-			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(myEd448.PublicKey)}";
+			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(myEd448.PublicKey)}|{Convert.ToBase64String(byteCerInfo)}";
+
+
 
 			//Update to database
 			string query = "UPDATE data_record SET data='" + output + "' WHERE id_record='" + id +"'";
