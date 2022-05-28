@@ -31,7 +31,6 @@ D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\K4os.Comp
 D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
 D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
-D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\MySql.Data.xml
 D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.csproj.CopyComplete
 D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.dll
 D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\net6.0-windows\refint\ChuKySo.dll
@@ -179,3 +178,9 @@ D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.pd
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.genruntimeconfig.cache
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ref\ChuKySo.dll
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.MakeCert.resources
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\TSS.Net.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-arm\lib\netcoreapp2.0\TSS.Net.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-musl-x64\lib\netcoreapp2.1\TSS.Net.dll
+D:\Visual studio\digital signature\ChuKySoRSA\bin\Debug\net6.0-windows\runtimes\linux-x64\lib\netcoreapp2.0\TSS.Net.dll
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.Login.resources
+D:\Visual studio\digital signature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.MakeCert.resources

@@ -76,7 +76,7 @@ namespace ChuKySo
 
 
 			//Output
-			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(myEd448.PublicKey)}|{Convert.ToBase64String(byteCerInfo)}";
+			string output = $"{Convert.ToBase64String(encrypted)}|{Convert.ToBase64String(sign)}|{Convert.ToBase64String(byteCerInfo)}";
 
 			//Insert to database
 			string query = "INSERT INTO data_record (`data`) VALUES ('" + output + "')";
