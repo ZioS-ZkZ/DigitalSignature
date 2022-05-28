@@ -178,3 +178,4 @@ D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\refint\Chu
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.pdb
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.genruntimeconfig.cache
 D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ref\ChuKySo.dll
+D:\MMH\Đồ án\DigitalSignature\ChuKySoRSA\obj\Debug\net6.0-windows\ChuKySo.MakeCert.resources

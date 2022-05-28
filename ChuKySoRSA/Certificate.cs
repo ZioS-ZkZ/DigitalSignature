@@ -98,7 +98,7 @@ namespace ChuKySo
 				return ecdsa.VerifyData(data, signature, HashAlgorithmName.SHA512);
 			}
 		}
-
+		
 		public static string ByteArrayToString(byte[] ba)
 		{
 			StringBuilder hex = new StringBuilder(ba.Length * 2);
