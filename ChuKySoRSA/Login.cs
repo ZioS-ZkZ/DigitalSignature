@@ -208,8 +208,8 @@ namespace ChuKySo
                         string querySelectPos = "SELECT position FROM account WHERE username = '" + txtUserLogin.Text + "'";
                         string querySelectKeyAes = "SELECT keyAES FROM account WHERE username = '" + txtUserLogin.Text + "'";
                         string querySelectIVAes = "SELECT IV FROM account WHERE username = '" + txtUserLogin.Text + "'";
-                        byte[] Key = Convert.FromBase64String(CreateRecord.SelectData(querySelectKeyAes, "")[0, 0]);
-                        byte[] IV = Convert.FromBase64String(CreateRecord.SelectData(querySelectIVAes, "")[0, 0]);
+                        byte[] Key = Convert.FromBase64String(CreateRecord.SelectData(querySelectKeyAes, "Tài khoản không tồn tại")[0, 0]);
+                        byte[] IV = Convert.FromBase64String(CreateRecord.SelectData(querySelectIVAes, "Tài khoản không tồn tại")[0, 0]);
                         string password = CreateRecord.DecryptStringFromBytes_Aes(Convert.FromBase64String(CreateRecord.SelectData(querySelectPassword, "")[0, 0]), Key, IV);
                         if (Convert.ToString(CreateRecord.SelectData(querySelectUsername, "Tài khoản không tồn tại")[0, 0]) != null
                             && txtUserLogin.Text == Convert.ToString(CreateRecord.SelectData(querySelectUsername, "Tài khoản không tồn tại")[0, 0])
